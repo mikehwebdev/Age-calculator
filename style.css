@@ -252,6 +252,7 @@ span {
     font-size: 2rem;
     width: 10rem;
     height: 4.5rem;
+    padding-left: 1.5rem;
   }
 
   .error  {
@@ -271,5 +272,9 @@ span {
   .result-text, span{
     font-size: 6.5rem;
     letter-spacing: -2.08px;
+  }
+
+  .result-text {
+    margin-left: 0.5rem;
   }
 } 
