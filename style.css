@@ -1,0 +1,274 @@
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: hsla(0, 0%, 8%, 1);
+  --grey:hsla(0, 1%, 44%, 1);
+  --light-grey:hsla(0, 0%, 94%, 1);
+  --line:hsla(0, 0%, 86%, 1);
+  --purple:hsla(259, 100%, 65%, 1);
+  --white:hsla(0, 0%, 100%, 1);
+  --red: hsla(0, 100%, 67%, 1);
+}
+
+body {
+  background-color: var(--light-grey);
+  display: grid;
+  place-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  caret-color: transparent;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 24px 24px 100px 24px;
+  min-width: 21.4375rem;
+  height: 30.375rem;
+  display: grid;
+  grid-template-rows: minmax(3rem, 6rem) minmax(4.75rem, 9.5rem) minmax(2rem, 4rem) minmax(4rem, 8rem) minmax(2rem, 4rem) minmax(3.875rem, 7.75rem)  minmax(3.875rem, 7.75rem) minmax(3.875rem, 7.75rem) minmax(3rem, 6rem);
+  grid-template-columns: minmax(1.5rem, 3rem) minmax(5.479rem, 10.958rem) minmax(1rem, 2rem) minmax(5.479rem, 10.958rem) minmax(1rem, 2rem) minmax(5.479rem, 10.958rem) minmax(1.5rem, 3rem);
+  grid-template-areas: 
+  ". . . . . . ."
+  ". form form form form form ."
+  ". . . . . . ."
+  ". slash slash slash slash slash ."
+  ". . . . . . ."
+  ". year year year year year ."
+  ". month month month month month ."
+  ". day day day day day ."
+  ". . . . . . .";
+}
+
+
+form {
+  grid-area: form;
+  display: grid;
+  grid-template-rows: minmax(1.125rem, 2.25rem) minmax(0.25rem, 0.5rem) minmax(3.375rem, 6.75rem) auto;
+  grid-template-columns: minmax(5.479rem, 10.958rem) minmax(1rem, 2rem) minmax(5.479rem, 10.958rem) minmax(1rem, 2rem) minmax(5.479rem, 10.958rem);
+  grid-template-areas: 
+  " day . month . year "
+  ". . . . ."
+  "day-input . month-input . year-input"
+  "day-error . month-error . year-error"
+  ;
+
+}
+
+.error  {
+  display: none;
+  font-size: 0.65rem;
+  color: var(--red);
+  font-weight: 400;
+  font-style: italic;
+}
+
+#yearError{
+  grid-area: year-error;
+}
+
+#monthError {
+  grid-area: month-error;
+}
+
+#dayError {
+  grid-area: day-error;
+}
+
+.label {
+  color: var(--grey);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.day {
+  grid-area: day;
+}
+
+.month {
+  grid-area: month;
+}
+
+.year {
+  grid-area: year;
+}
+
+#day-result {
+  grid-area: day-span;
+}
+
+#month-result {
+  grid-area: month-span;
+}
+
+#year-result {
+  grid-area: year-span;
+}
+
+#dayInput {
+  grid-area: day-input;
+}
+
+#monthInput {
+  grid-area: month-input;
+}
+
+#yearInput {
+  grid-area: year-input;
+}
+
+input {
+  font-family: 'Poppins', sans-serif;
+  max-width: 10rem;
+  border-radius: 8px;
+  border: var(--line) 1px solid;
+  color: var(--black);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--black);
+  padding: 0 0 0 1rem;
+  cursor: pointer;
+  caret-color: auto;
+}
+
+input:hover,input:active {
+  border: var(--purple) 1px solid;
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Removing spinner from inputs */
+
+/* For Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.slash {
+  height: 0.0625rem;
+  background-color: var(--line);
+  grid-area: slash;
+  align-self: center;
+}
+
+.button {
+  z-index: 1;
+  border-radius: 50%;
+  background-position: center;
+  /* background-image: url("/img/button.svg"); */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M0.5 12.0103C4.5 11.8287 12.5 13.9723 12.5 24" stroke="white" stroke-width="2"/><path d="M12.5 24V0" stroke="white" stroke-width="2"/><path d="M24.5 12.0103C20.5 11.8287 12.5 13.9723 12.5 24" stroke="white" stroke-width="2"/></svg>');
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--purple);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  grid-row: 4/5;
+  grid-column: 4/5;
+  justify-self: center;
+}
+
+.button:hover {
+  background-color: var(--black);
+}
+
+.result-text, span {
+  font-size: min(16.327vw, 65px);
+  font-weight: 800;
+  font-style: italic;
+  line-height: 110%;
+  letter-spacing: -1.12px;
+  overflow:visible;
+}
+
+p:nth-of-type(1) {
+  grid-area: year;
+}
+
+p:nth-of-type(2) {
+  grid-area: month;
+}
+
+p:nth-of-type(3) {
+  grid-area: day;
+}
+
+span {
+  color: var(--purple);
+}
+
+@media (min-width:840px) {
+
+  form {
+    grid-template-rows: 1.3125rem 0.5rem 4.5rem auto;
+    grid-template-columns: 10rem 2rem 10rem 2rem 10rem;
+    grid-template-areas: 
+    "day . month . year"
+    ". . . . ."
+    "day-input . month-input . year-input"
+    "day-error . month-error . year-error";
+  }
+
+  .card {
+    border-radius: 24px 24px 200px 24px;
+    height: 40.6875rem;
+    width: 52.5rem;
+    grid-template-rows: 3.5rem auto auto 6rem 7.125rem 7.125rem 7.125rem 3.5rem;
+    grid-template-columns: 3.5rem 10rem 2rem 10rem 2rem 10rem 11.5rem 3.5rem;
+    grid-template-areas: 
+    ". . . . . . . ."
+    ". form form form form form . ."
+    ". day-error . month-error . year-error . ."
+    ". slash slash slash slash slash slash ."
+    ". year year year year year year ."
+    ". month month month month month month ."
+    ". day day day day day day ."
+    ". . . . . . . ."
+  }
+
+  .label {
+    letter-spacing: 3.5px;
+    font-size: 0.875rem;
+  }
+
+  input {
+    font-size: 2rem;
+    width: 10rem;
+    height: 4.5rem;
+  }
+
+  .error  {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .button {
+    height: 6rem;
+    width: 6rem;
+    grid-column: 7/8;
+    justify-self: end;
+    background-size: 2.75rem 2.75rem;
+    background-image: url(/img/full-size-button.svg);
+  }
+
+  .result-text, span{
+    font-size: 6.5rem;
+    letter-spacing: -2.08px;
+  }
+} 
