@@ -5,7 +5,7 @@
 }
 
 :root {
-  --black: hsla(0, 0%, 8%, 1);
+  --black: #151515;
   --grey:hsla(0, 1%, 44%, 1);
   --light-grey:hsla(0, 0%, 94%, 1);
   --line:hsla(0, 0%, 86%, 1);
@@ -217,7 +217,7 @@ p:nth-of-type(3) {
 
 span {
   display: inline-block;
-  padding-right: 0.5rem;
+  margin-right: 0.5rem;
   color: var(--purple); 
 }
 
