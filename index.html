@@ -13,6 +13,7 @@
     <title>Age Calculator</title>
   </head>
   <body>
+  <div class="container">
     <main class="card">
       <form>
         <label for="dayInput" class="day label">Day</label>
@@ -20,7 +21,7 @@
         <label for="monthInput" class="month label">Month</label>
         <input type="number" id="monthInput" name="month" placeholder="MM">
         <label for="yearInput" class="year label">Year</label>
-        <input type="number" id="yearInput" name="year" placeholder="YY">
+        <input type="number" id="yearInput" name="year" placeholder="YYYY">
         <p id="yearError" class="error">Must be a valid date</p>
         <p id="monthError" class="error">MMust be a valid date</p>
         <p id="dayError" class="error">Must be a valid date</p>
@@ -28,10 +29,11 @@
       
       <div class="button" id="button"></div>
       <div class="slash"></div>
-      <p class="result-text"><span id="year-result">--</span> years</p>
-      <p class="result-text"><span id="month-result">--</span> months</p>
-      <p class="result-text"><span id="day-result">--</span> days</p>
+      <p class="result-text"><span id="year-result">- -</span> years</p>
+      <p class="result-text"><span id="month-result">- -</span> months</p>
+      <p class="result-text"><span id="day-result">- -</span> days</p>
     </main>
+  </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
