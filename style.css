@@ -25,7 +25,7 @@ body {
 }
 
 .card {
-  margin: 11.6875 auto 9.625rem auto;
+  margin: 11.6875.625rem auto 9.625rem auto;
   background-color: var(--white);
   border-radius: 24px 24px 100px 24px;
   min-width: 21.4375rem;
@@ -137,7 +137,6 @@ input {
   padding: 0 0 0 1rem;
   cursor: pointer;
   caret-color: auto;
-  opacity: 0.5;
 }
 
 input:hover,input:active {
@@ -199,10 +198,6 @@ input[type=number] {
   overflow:visible;
 }
 
-.result-text {
-  margin-left: 0.5rem;
-}
-
 p:nth-of-type(1) {
   grid-area: year;
 }
@@ -257,7 +252,6 @@ span {
     font-size: 2rem;
     width: 10rem;
     height: 4.5rem;
-    padding-left: 1.5rem;
   }
 
   .error  {
