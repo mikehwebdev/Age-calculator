@@ -25,11 +25,8 @@ body {
   display: grid;
   place-items: center;
   justify-items: center;
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-}
-
-.main-title {
-  display: none;
 }
 
 .card {
