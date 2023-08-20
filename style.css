@@ -148,6 +148,10 @@ input:focus {
   outline: none;
 }
 
+input::placeholder {
+  opacity: 0.5;
+}
+
 /* Removing spinner from inputs */
 
 /* For Chrome, Safari, Edge, Opera */
