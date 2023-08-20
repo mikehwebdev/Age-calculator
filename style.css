@@ -19,9 +19,13 @@ body {
   display: grid;
   place-items: center;
   justify-items: center;
-  min-height: 100vh;
+  height: 100vh;
   font-family: 'Poppins', sans-serif;
   caret-color: transparent;
+}
+
+.main-title {
+  display: none;
 }
 
 .card {
