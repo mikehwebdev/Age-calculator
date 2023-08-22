@@ -90,6 +90,12 @@ let enteredDay = dayInputEl.value
 let enteredMonth = monthInputEl.value
 let enteredYear = yearInputEl.value
 
+//Reset current dates to ensure accurate results and to save having a third set of date variables
+
+currentYear = date.getFullYear()
+currentMonth = date.getMonth() + 1
+currentDay = date.getDate()
+
 
 // If the input day is less than current day js adds the current months worth of days (ensuring we compensate for zero index). We then remove a month.
 
@@ -112,12 +118,20 @@ let resultM = currentMonth - enteredMonth
 let resultY = currentYear - enteredYear
 
 //Error checking
+
+
     checkDateEntered()
 
 //update DOM
+if (checkDateEntered()) {
     dayResultEl.textContent = resultD
     monthResultEl.textContent = resultM
     yearResultEl.textContent = resultY
+} else {
+    dayResultEl.textContent = "- -"
+    monthResultEl.textContent = "- -"
+    yearResultEl.textContent = resultY = "- -"
+}
 }
 
 
@@ -179,6 +193,9 @@ let yearCorrect = true
 
     if (!dayCorrect || !monthCorrect || !yearCorrect) {
         errorStyleApplier()
+        return false
+    } else {
+        return true
     }
 }
 
